@@ -70,6 +70,26 @@ document.querySelectorAll('.nav__drop-btn').forEach(btn => {
   });
 });
 
+// Quote form — basic validation + success message
+const quoteForm = document.getElementById('quoteForm');
+if (quoteForm) {
+  quoteForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const btn = quoteForm.querySelector('button[type="submit"]');
+    btn.textContent = 'Sending...';
+    btn.disabled = true;
+    setTimeout(() => {
+      quoteForm.innerHTML = `
+        <div style="text-align:center; padding: 40px 0;">
+          <div style="font-size:40px; margin-bottom:12px;">✅</div>
+          <h3 style="margin-bottom:8px;">Quote Request Sent!</h3>
+          <p style="color:#687186;">Thank you. We'll get back to you within 24 hours with your free quote.</p>
+        </div>
+      `;
+    }, 1200);
+  });
+}
+
 // FAQ accordion
 document.querySelectorAll('.faq__question').forEach(btn => {
   btn.addEventListener('click', () => {
