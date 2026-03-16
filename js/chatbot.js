@@ -7,89 +7,175 @@
 
   // ── Knowledge Base ──────────────────────────
   const KB = [
+    // ── Services overview ──
     {
-      keywords: ['service', 'what do you do', 'what do you offer', 'help with', 'provide'],
-      answer: 'We offer six core services:\n\n• Clinical & Medical Waste\n• Dental Waste\n• Sanitary Bins\n• Sharps Disposal\n• Nappy Waste Disposal\n• Hygiene Waste\n\nWould you like to know more about a specific service?'
+      keywords: ['service', 'what do you do', 'what do you offer', 'help with', 'provide', 'our services'],
+      answer: 'We offer six core services:\n\n• <b>Clinical & Medical Waste</b> — infectious & non-infectious healthcare waste\n• <b>Dental Waste</b> — amalgam, clinical & pharmaceutical dental waste\n• <b>Sanitary Bins</b> — discreet washroom hygiene units\n• <b>Sharps Disposal</b> — UN-approved containers & collections\n• <b>Nappy Waste</b> — odour-controlled units for nurseries & care homes\n• <b>Hygiene Waste</b> — PPE, gloves & general offensive waste\n\nWould you like details on a specific service?'
     },
+    // ── Clinical & Medical Waste ──
     {
-      keywords: ['clinical', 'medical waste', 'healthcare waste', 'infectious'],
-      answer: 'Our Clinical & Medical Waste service covers safe, compliant disposal of infectious and non-infectious healthcare waste with full traceability. We work with NHS facilities, GP surgeries, hospitals, and private clinics.\n\n<a href="' + getPagePrefix() + 'clinical-medical-waste.html">Learn more about Clinical Waste →</a>'
+      keywords: ['clinical', 'medical waste', 'healthcare waste', 'infectious', 'hospital', 'gp surgery', 'nhs waste'],
+      answer: 'Our <b>Clinical & Medical Waste</b> service covers:\n\n• Infectious & potentially infectious clinical waste\n• Pharmaceutical & cytotoxic waste\n• Anatomical & pathological waste\n• Tiger-stripe offensive waste\n• PPE from clinical use\n\nWe supply colour-coded, UN-approved containers and provide waste transfer notes with every collection. Ideal for GP surgeries, NHS clinics, hospitals, care homes, and veterinary practices.\n\n<a href="' + getPagePrefix() + 'clinical-medical-waste.html">Full details →</a>'
     },
+    // ── Dental Waste ──
     {
-      keywords: ['dental', 'amalgam', 'dentist'],
-      answer: 'We provide specialist dental waste collection including amalgam, clinical waste, and sharps for dental practices of all sizes. UN-approved containers are supplied and exchanged on schedule.\n\n<a href="' + getPagePrefix() + 'dental-waste.html">Learn more about Dental Waste →</a>'
+      keywords: ['dental', 'amalgam', 'dentist', 'dental practice', 'dental waste', 'x-ray chemical'],
+      answer: 'Our <b>Dental Waste</b> service handles:\n\n• Dental amalgam waste (fillings, capsules, separator sludge)\n• Clinical dental waste & contaminated instruments\n• Pharmaceutical & medicine waste\n• X-ray processing chemicals (fixer & developer)\n• Sharps from dental procedures\n\nPurpose-built containers supplied for each waste stream. We work with NHS & private practices, orthodontic clinics, and dental labs.\n\n<a href="' + getPagePrefix() + 'dental-waste.html">Full details →</a>'
     },
+    // ── Sanitary Bins ──
     {
-      keywords: ['sanitary', 'feminine', 'washroom', 'bin'],
-      answer: 'Our Sanitary Bin service provides discreet, hygienic feminine hygiene waste units for offices, schools, healthcare sites, and public venues. Units are serviced regularly by uniformed professionals.\n\n<a href="' + getPagePrefix() + 'sanitary-bins.html">Learn more about Sanitary Bins →</a>'
+      keywords: ['sanitary', 'feminine', 'washroom', 'sanitary bin', 'feminine hygiene'],
+      answer: 'Our <b>Sanitary Bin</b> service includes:\n\n• Choice of bin sizes & styles to suit your facilities\n• Discreet, odour-controlled units\n• Regular scheduled servicing (monthly or more frequent)\n• Liners replaced & bins sanitised at every visit\n• Waste removed for compliant disposal\n\nIdeal for offices, schools, healthcare facilities, retail venues, and leisure centres. No long-term lock-in contracts.\n\n<a href="' + getPagePrefix() + 'sanitary-bins.html">Full details →</a>'
     },
+    // ── Sharps Disposal ──
     {
-      keywords: ['sharp', 'needle', 'syringe', 'lancet'],
-      answer: 'We supply UN-approved, colour-coded sharps containers (0.5L to 30L) with scheduled collections. Suitable for clinical environments, home users, tattoo studios, and veterinary practices.\n\n<a href="' + getPagePrefix() + 'sharps-disposal.html">Learn more about Sharps Disposal →</a>'
+      keywords: ['sharp', 'needle', 'syringe', 'lancet', 'blade', 'sharps disposal', 'sharps bin'],
+      answer: 'Our <b>Sharps Disposal</b> service provides:\n\n• UN-approved, colour-coded containers (0.5L to 30L)\n• Yellow-lidded bins for needles & syringes\n• Medicinally & non-medicinally contaminated sharps\n• Scalpel blades, lancets & glass ampoules\n• Scheduled exchanges or one-off collections\n• Domestic collection service for home sharps users\n\nAll sharps treated as hazardous waste — zero landfill. Suitable for GP surgeries, tattoo studios, vets, pharmacies, and home users.\n\n<a href="' + getPagePrefix() + 'sharps-disposal.html">Full details →</a>'
     },
+    // ── Nappy Waste ──
     {
-      keywords: ['nappy', 'nappies', 'incontinence', 'nursery', 'childcare', 'diaper'],
-      answer: 'Our Nappy Waste Disposal service provides odour-controlled, purpose-built units with flexible collection schedules for nurseries, schools, care homes, and NHS settings.\n\n<a href="' + getPagePrefix() + 'nappy-waste.html">Learn more about Nappy Waste →</a>'
+      keywords: ['nappy', 'nappies', 'incontinence', 'nursery', 'childcare', 'diaper', 'nappy waste', 'changing'],
+      answer: 'Our <b>Nappy Waste Disposal</b> service provides:\n\n• Odour-controlled, purpose-built waste units\n• Flexible collection: weekly, fortnightly, or as needed\n• Handles used nappies, incontinence pads, wipes & PPE\n• Discreet uniformed collections\n• Dedicated account manager for your facility\n\nDesigned for nurseries, primary schools, care homes, NHS settings, SEN schools, and holiday parks.\n\n<a href="' + getPagePrefix() + 'nappy-waste.html">Full details →</a>'
     },
+    // ── Hygiene Waste ──
     {
-      keywords: ['hygiene waste', 'general waste', 'offensive waste', 'ppe', 'tiger stripe'],
-      answer: 'Our Hygiene Waste service covers offensive and non-infectious waste including PPE, gloves, aprons, and contaminated paper products. We supply suitable containers and provide scheduled collections.\n\n<a href="' + getPagePrefix() + 'hygiene-waste.html">Learn more about Hygiene Waste →</a>'
+      keywords: ['hygiene waste', 'general waste', 'offensive waste', 'ppe', 'tiger stripe', 'commercial waste'],
+      answer: 'Our <b>Hygiene Waste</b> service covers:\n\n• Offensive/tiger-stripe hygiene waste\n• PPE & single-use protective equipment\n• Contaminated paper & hygiene products\n• Used gloves & aprons (non-clinical)\n• Feminine hygiene products\n• Non-infectious wound dressings\n\nWe advise on waste segregation to reduce costs. Nationwide coverage with transparent pricing.\n\n<a href="' + getPagePrefix() + 'hygiene-waste.html">Full details →</a>'
     },
+    // ── How it works ──
     {
-      keywords: ['price', 'cost', 'how much', 'quote', 'pricing', 'expensive', 'cheap', 'afford'],
-      answer: 'We offer competitive, transparent pricing with no hidden fees or surprise charges. Every quote is tailored to your specific needs.\n\nGet a free, no-obligation quote by:\n• Calling <a href="tel:03300100130">0330 010 0130</a>\n• Filling in our <a href="#quote-form">online quote form</a>'
+      keywords: ['how it works', 'how does it work', 'process', 'steps', 'what happens', 'how do i', 'getting started', 'set up', 'setup'],
+      answer: 'It\'s simple — just 3 steps:\n\n<b>1. Get in Touch</b>\nCall us on <a href="tel:03300100130">0330 010 0130</a> or fill in our quote form. We\'ll discuss your requirements and provide a free, no-obligation quote.\n\n<b>2. Setup & Install</b>\nWe deliver and install all required bins, containers, and equipment at your premises — at no extra cost.\n\n<b>3. Scheduled Service</b>\nRegular, discreet collections by uniformed professionals on a schedule that suits you. Full documentation provided every time.\n\n<a href="#quote-form">Get started with a free quote →</a>'
     },
+    // ── Pricing / Quotes ──
     {
-      keywords: ['area', 'cover', 'location', 'where', 'nationwide', 'region', 'local'],
-      answer: 'We provide nationwide coverage across the entire UK. Whether you\'re in a major city or a rural area, our regional teams can service your premises on a regular, scheduled basis.'
+      keywords: ['price', 'cost', 'how much', 'quote', 'pricing', 'expensive', 'cheap', 'afford', 'free quote', 'budget'],
+      answer: 'We offer <b>competitive, transparent pricing</b> with:\n\n• No hidden fees or surprise charges\n• No long-term lock-in contracts\n• Every quote tailored to your specific needs\n• Free, no-obligation quotes\n\nGet your free quote now:\n📞 <a href="tel:03300100130">0330 010 0130</a>\n📝 <a href="#quote-form">Online quote form</a>\n\nWe\'ll respond within 24 hours.'
     },
+    // ── Coverage area ──
     {
-      keywords: ['contact', 'phone', 'call', 'email', 'get in touch', 'reach'],
+      keywords: ['area', 'cover', 'location', 'where', 'nationwide', 'region', 'local', 'coverage', 'travel'],
+      answer: 'We provide <b>nationwide coverage across the entire UK</b>. Whether you\'re in a major city or a rural area, our regional teams can service your premises on a regular, scheduled basis.\n\nFrom NHS practices in London to dental clinics in Scotland — we\'ve got you covered.'
+    },
+    // ── Contact details ──
+    {
+      keywords: ['contact', 'phone', 'call', 'email', 'get in touch', 'reach', 'speak'],
       answer: 'You can reach us by:\n\n📞 Phone: <a href="tel:03300100130">0330 010 0130</a>\n✉️ Email: <a href="mailto:hello@apexhygieneuk.co.uk">hello@apexhygieneuk.co.uk</a>\n🕐 Mon–Fri: 9am – 5pm\n\nOr fill in our <a href="#quote-form">quick quote form</a> and we\'ll get back to you within 24 hours.'
     },
+    // ── Address ──
     {
-      keywords: ['address', 'office', 'based', 'head office', 'find you'],
-      answer: 'Our office is located at:\n\nUnit 1 Commerce House\nCampbeltown Road\nBirkenhead, Merseyside\nCH41 9HP\n\n📞 <a href="tel:03300100130">0330 010 0130</a>'
+      keywords: ['address', 'office', 'based', 'head office', 'find you', 'where are you'],
+      answer: 'Our office is located at:\n\n📍 Unit 1 Commerce House\nCampbeltown Road\nBirkenhead, Merseyside\nCH41 9HP\n\n📞 <a href="tel:03300100130">0330 010 0130</a>\n✉️ <a href="mailto:hello@apexhygieneuk.co.uk">hello@apexhygieneuk.co.uk</a>'
     },
+    // ── Collection frequency ──
     {
-      keywords: ['how often', 'frequency', 'schedule', 'collection', 'how frequently', 'weekly', 'fortnightly'],
-      answer: 'Collection frequency depends on your needs and waste type. We offer:\n\n• Weekly collections\n• Fortnightly collections\n• Four-weekly collections\n• Custom schedules\n\nYour account manager will work with you to find the right plan.'
+      keywords: ['how often', 'frequency', 'schedule', 'collection', 'how frequently', 'weekly', 'fortnightly', 'pick up'],
+      answer: 'Collection frequency depends on your waste type and volume. We offer:\n\n• <b>Weekly</b> collections\n• <b>Fortnightly</b> collections\n• <b>Four-weekly</b> (monthly) collections\n• <b>Custom schedules</b> tailored to your needs\n• <b>One-off</b> collections also available\n\nYour dedicated account manager will work with you to find the right plan.'
     },
+    // ── Compliance & licensing ──
     {
-      keywords: ['complian', 'licen', 'regulat', 'legal', 'certified', 'accredited', 'law'],
-      answer: 'Yes — we are fully licensed and compliant. We hold full waste carrier licences and operate in strict compliance with all UK waste management and environmental regulations. Every collection is documented and fully traceable.'
+      keywords: ['complian', 'licen', 'regulat', 'legal', 'certified', 'accredited', 'law', 'waste transfer', 'documentation', 'audit'],
+      answer: 'Yes — we are <b>fully licensed and compliant</b>.\n\n• Full waste carrier licences held\n• Strict compliance with all UK waste management regulations\n• Adherence to Hazardous Waste Regulations\n• Environment Agency guidelines followed\n• <b>Waste transfer notes</b> provided for every collection\n• Complete audit trail for your records\n\nEvery collection is documented and fully traceable, giving you peace of mind and legal coverage.'
     },
+    // ── Start / sign up ──
     {
-      keywords: ['start', 'sign up', 'begin', 'get going', 'how does it work', 'process', 'next step'],
-      answer: 'Getting started is simple:\n\n1️⃣ Get in touch — call us or fill in our quote form\n2️⃣ We deliver and install all required bins and containers\n3️⃣ Regular, discreet collections on a schedule that suits you\n\nCall <a href="tel:03300100130">0330 010 0130</a> or <a href="#quote-form">request a quote online</a>.'
+      keywords: ['start', 'sign up', 'begin', 'get going', 'next step', 'join', 'register', 'new customer'],
+      answer: 'Getting started is easy! Here\'s what to do:\n\n1️⃣ <b>Call us</b> on <a href="tel:03300100130">0330 010 0130</a> or <a href="#quote-form">request a quote online</a>\n2️⃣ We\'ll discuss your needs and send a <b>free, tailored quote</b>\n3️⃣ Once agreed, we <b>deliver all containers</b> and set up your schedule\n4️⃣ <b>Regular collections</b> begin — discreet, on time, fully documented\n\nMost customers are up and running within days!'
     },
+    // ── Opening hours ──
     {
-      keywords: ['hours', 'open', 'when', 'available', 'time'],
-      answer: 'Our office hours are Monday to Friday, 9am – 5pm.\n\nYou can reach us on <a href="tel:03300100130">0330 010 0130</a> or email <a href="mailto:hello@apexhygieneuk.co.uk">hello@apexhygieneuk.co.uk</a> anytime and we\'ll respond during business hours.'
+      keywords: ['hours', 'open', 'when', 'available', 'time', 'office hours', 'working hours'],
+      answer: 'Our office hours are:\n\n🕐 <b>Monday – Friday:</b> 9am to 5pm\n\nYou can call <a href="tel:03300100130">0330 010 0130</a> during these hours, or email <a href="mailto:hello@apexhygieneuk.co.uk">hello@apexhygieneuk.co.uk</a> anytime — we\'ll respond on the next working day.'
     },
+    // ── Contracts ──
     {
-      keywords: ['contract', 'lock in', 'cancel', 'commitment', 'term'],
-      answer: 'We offer flexible contracts with no long-term lock-in. We believe in earning your business through great service, not tying you into lengthy agreements. Contact us to discuss terms that suit you.'
+      keywords: ['contract', 'lock in', 'cancel', 'commitment', 'term', 'minimum term', 'notice period'],
+      answer: 'We offer <b>flexible contracts with no long-term lock-in</b>. We believe in earning your business through great service, not tying you into lengthy agreements.\n\nCompetitively priced with no surprise charges. Contact us to discuss terms that suit your business.'
     },
+    // ── Environment ──
     {
-      keywords: ['environment', 'green', 'sustain', 'recycle', 'eco'],
-      answer: 'We are committed to environmentally responsible disposal. We prioritise waste segregation, recycling, and sustainable disposal methods to reduce environmental impact and support our clients\' green goals.'
+      keywords: ['environment', 'green', 'sustain', 'recycle', 'eco', 'carbon', 'landfill'],
+      answer: 'We are committed to <b>environmentally responsible disposal</b>:\n\n• Waste segregation to maximise recycling\n• Sustainable disposal methods prioritised\n• Reduced landfill wherever possible\n• Support for clients\' environmental & CSR goals\n• All sharps treated — zero landfill\n\nWe help you do the right thing for the environment while staying fully compliant.'
     },
+    // ── Who we work with ──
     {
-      keywords: ['who', 'business', 'sector', 'industry', 'work with', 'client'],
-      answer: 'We work with a wide range of businesses including:\n\n• Healthcare facilities & GP surgeries\n• Dental practices\n• Nurseries & schools\n• Care homes\n• Commercial offices\n• Hotels & hospitality venues\n• Leisure centres\n• Public buildings'
+      keywords: ['who', 'business', 'sector', 'industry', 'work with', 'client', 'type of business', 'customer'],
+      answer: 'We work with a wide range of businesses:\n\n• 🏥 GP surgeries & NHS clinics\n• 🦷 Dental practices & orthodontists\n• 👶 Nurseries & primary schools\n• 🏠 Care homes & nursing facilities\n• 🏢 Commercial offices & workplaces\n• 🏨 Hotels & hospitality venues\n• 🏋️ Leisure centres & gyms\n• 🏛️ Public buildings & transport hubs\n• 💉 Tattoo studios & aesthetics clinics\n• 🐾 Veterinary practices'
     },
+    // ── About the company ──
     {
-      keywords: ['about', 'company', 'who are you', 'tell me about'],
-      answer: 'Apex Hygiene UK (CCS Group NW Limited T/A Apex Hygiene UK) is a specialist waste management and hygiene services company. We\'re committed to creating cleaner, safer, and more hygienic environments for businesses across every sector.\n\n<a href="' + getPagePrefix() + 'about.html">Read more about us →</a>'
+      keywords: ['about', 'company', 'who are you', 'tell me about', 'apex hygiene'],
+      answer: '<b>Apex Hygiene UK</b> (CCS Group NW Limited T/A Apex Hygiene UK) is a specialist waste management and hygiene services company based in Birkenhead, Merseyside.\n\nWe\'re committed to creating cleaner, safer, and more hygienic environments for businesses across every sector. What sets us apart is our customer-first approach — responsive communication, flexible schedules, and your peace of mind at the centre of everything we do.\n\n<a href="' + getPagePrefix() + 'about.html">Read more about us →</a>'
     },
+    // ── Containers / bins / equipment ──
     {
-      keywords: ['hello', 'hi', 'hey', 'good morning', 'good afternoon'],
-      answer: 'Hello! 👋 Welcome to Apex Hygiene UK. How can I help you today?\n\nYou can ask me about our services, pricing, coverage area, or how to get started.'
+      keywords: ['container', 'bin', 'equipment', 'supplies', 'what do you supply', 'provide bins', 'colour coded'],
+      answer: 'We supply all the containers and equipment you need:\n\n• <b>Colour-coded clinical waste bins</b> (yellow, orange, tiger-stripe)\n• <b>UN-approved sharps containers</b> (0.5L to 30L)\n• <b>Dental amalgam containers</b>\n• <b>Sanitary waste units</b> (various sizes & styles)\n• <b>Nappy waste units</b> (odour-controlled)\n• <b>General hygiene waste bins</b>\n\nAll containers are supplied, delivered, and maintained as part of your service — no extra charge.'
     },
+    // ── Waste transfer notes / paperwork ──
     {
-      keywords: ['thank', 'thanks', 'cheers', 'ta'],
-      answer: 'You\'re welcome! If you need anything else, just ask. You can also reach us directly on <a href="tel:03300100130">0330 010 0130</a>. Have a great day! 😊'
+      keywords: ['waste transfer', 'paperwork', 'documentation', 'duty of care', 'traceable', 'receipt', 'proof'],
+      answer: 'We provide <b>complete documentation</b> for every collection:\n\n• Waste transfer notes (consignment notes for hazardous waste)\n• Full audit trail for regulatory compliance\n• Traceable from point of collection to final disposal\n• Proof of compliant disposal for your records\n\nThis gives you total peace of mind and ensures you meet your Duty of Care obligations.'
+    },
+    // ── Account manager ──
+    {
+      keywords: ['account manager', 'dedicated', 'point of contact', 'support', 'customer service', 'help with account'],
+      answer: 'Every customer gets a <b>dedicated account manager</b> who:\n\n• Is your single point of contact\n• Handles all queries and adjustments\n• Reviews your service plan regularly\n• Ensures collections run smoothly\n• Provides responsive, personal support\n\nWe pride ourselves on communication that puts your needs first.'
+    },
+    // ── Hazardous waste ──
+    {
+      keywords: ['hazardous', 'dangerous', 'toxic', 'cytotoxic', 'pharmaceutical', 'medicine waste'],
+      answer: 'Yes, we handle <b>hazardous waste</b> including:\n\n• Cytotoxic & cytostatic medicines\n• Pharmaceutical waste & returned medicines\n• Medicinally contaminated sharps\n• Infectious clinical waste\n\nAll hazardous waste is handled under strict Hazardous Waste Regulations with full consignment notes provided. No hazardous waste goes to landfill.\n\n📞 <a href="tel:03300100130">Call us to discuss your requirements</a>'
+    },
+    // ── Care home specific ──
+    {
+      keywords: ['care home', 'nursing home', 'residential care', 'elderly care', 'supported living'],
+      answer: 'We provide tailored services for <b>care homes and nursing facilities</b>:\n\n• Clinical waste from medical procedures\n• Incontinence & nappy waste with odour-controlled units\n• Sharps disposal for medication administration\n• General hygiene waste\n• Flexible scheduling around residents\' needs\n\nWe understand the sensitivity required in care environments. Discreet, uniformed collections every time.\n\n<a href="tel:03300100130">📞 Get a care home quote</a>'
+    },
+    // ── School / education ──
+    {
+      keywords: ['school', 'education', 'college', 'university', 'teacher', 'classroom'],
+      answer: 'We support <b>schools and educational settings</b> with:\n\n• Sanitary bins for student & staff washrooms\n• Nappy waste disposal for nursery & reception classes\n• First-aid sharps disposal\n• General hygiene waste management\n\nDiscreet, scheduled collections that won\'t disrupt the school day.\n\n<a href="tel:03300100130">📞 Get an education quote</a>'
+    },
+    // ── Tattoo / aesthetics ──
+    {
+      keywords: ['tattoo', 'piercing', 'aesthetics', 'beauty', 'cosmetic', 'botox', 'filler'],
+      answer: 'We provide waste services for <b>tattoo, piercing & aesthetics studios</b>:\n\n• Sharps disposal (needles, blades, cartridges)\n• Clinical waste from procedures\n• Colour-coded containers supplied\n• Scheduled or on-demand collections\n\nKeep your studio compliant and your clients confident.\n\n<a href="' + getPagePrefix() + 'sharps-disposal.html">Sharps service details →</a>'
+    },
+    // ── Vet / veterinary ──
+    {
+      keywords: ['vet', 'veterinary', 'animal', 'pet'],
+      answer: 'We work with <b>veterinary practices</b> for:\n\n• Clinical waste from surgeries & treatments\n• Sharps disposal (needles, syringes, scalpels)\n• Pharmaceutical waste & returned medicines\n• Colour-coded containers supplied\n\nScheduled collections that fit around your clinic hours.\n\n<a href="tel:03300100130">📞 Get a vet practice quote</a>'
+    },
+    // ── Greetings ──
+    {
+      keywords: ['hello', 'hi', 'hey', 'good morning', 'good afternoon', 'hiya', 'yo'],
+      answer: 'Hello! 👋 Welcome to Apex Hygiene UK. How can I help you today?\n\nYou can ask me about our services, pricing, coverage, how it works, or anything else!'
+    },
+    // ── Thanks ──
+    {
+      keywords: ['thank', 'thanks', 'cheers', 'ta', 'brilliant', 'great', 'perfect'],
+      answer: 'You\'re welcome! 😊 If you need anything else, just ask.\n\nOr reach us directly:\n📞 <a href="tel:03300100130">0330 010 0130</a>\n✉️ <a href="mailto:hello@apexhygieneuk.co.uk">hello@apexhygieneuk.co.uk</a>'
+    },
+    // ── Bye ──
+    {
+      keywords: ['bye', 'goodbye', 'see you', 'that\'s all', 'nothing else'],
+      answer: 'Thanks for chatting with us! If you ever need anything, we\'re just a call away on <a href="tel:03300100130">0330 010 0130</a>. Have a great day! 👋'
+    },
+    // ── Complaints ──
+    {
+      keywords: ['complaint', 'unhappy', 'problem', 'issue', 'wrong', 'late', 'missed'],
+      answer: 'We\'re sorry to hear you\'re having an issue. We take all feedback seriously.\n\nPlease contact us directly so we can resolve this for you:\n\n📞 <a href="tel:03300100130">0330 010 0130</a>\n✉️ <a href="mailto:hello@apexhygieneuk.co.uk">hello@apexhygieneuk.co.uk</a>\n\nOur team will look into it straight away.'
+    },
+    // ── Safety ──
+    {
+      keywords: ['safe', 'safety', 'health and safety', 'risk', 'injury', 'protect'],
+      answer: 'Safety is our top priority:\n\n• All waste handled by trained, uniformed professionals\n• Strict adherence to UK Health & Safety at Work regulations\n• Proper waste segregation to prevent cross-contamination\n• UN-approved containers for hazardous materials\n• Full PPE worn during all collections\n\nYour premises, your staff, and your visitors are always protected.'
+    },
+    // ── Discreet / uniformed ──
+    {
+      keywords: ['discreet', 'uniform', 'professional', 'quiet', 'private'],
+      answer: 'All our collections are carried out by <b>uniformed professionals</b> who work discreetly and efficiently.\n\nWe understand that waste management should be invisible to your clients, patients, and visitors. Our team arrives on schedule, handles everything quickly, and leaves your premises clean and tidy.'
     }
   ];
 
