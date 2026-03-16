@@ -135,6 +135,39 @@ p:last-child { margin-bottom: 0; }
 .btn--lg { padding: 16px 36px; font-size: 16px; }
 
 /* ============================================
+   REVIEW BAR (Trustpilot-style)
+============================================ */
+.review-bar {
+  background: var(--teal);
+  color: var(--white);
+  text-align: center;
+  padding: 7px 0;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+}
+.review-bar__inner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+.review-bar__stars {
+  color: #fbbf24;
+  font-size: 14px;
+  letter-spacing: 1px;
+}
+.review-bar strong {
+  font-weight: 700;
+}
+.review-bar a {
+  color: var(--lime);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+.review-bar a:hover { opacity: 0.85; }
+
+/* ============================================
    TOP BAR
 ============================================ */
 .topbar {
@@ -263,6 +296,34 @@ p:last-child { margin-bottom: 0; }
 .dropdown li a:hover {
   background: var(--mist);
   color: var(--teal);
+}
+
+/* Header CTAs */
+.header__ctas {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+}
+.btn--phone {
+  background: var(--lime);
+  color: var(--slate);
+  border-color: var(--lime);
+  font-size: 15px;
+  font-weight: 800;
+  padding: 11px 22px;
+  letter-spacing: -0.01em;
+}
+.btn--phone:hover {
+  background: #a6d83e;
+  border-color: #a6d83e;
+  transform: translateY(-1px);
+  box-shadow: 0 8px 24px rgba(184,240,69,0.3);
+}
+.btn--phone svg {
+  width: 16px;
+  height: 16px;
+  fill: currentColor;
 }
 
 .hamburger {
@@ -866,6 +927,141 @@ p:last-child { margin-bottom: 0; }
 }
 
 /* ============================================
+   HOW IT WORKS
+============================================ */
+.how-it-works { background: var(--white); }
+.steps {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 0;
+  position: relative;
+  counter-reset: step;
+}
+.steps::before {
+  content: '';
+  position: absolute;
+  top: 36px;
+  left: 10%;
+  right: 10%;
+  height: 2px;
+  background: var(--border);
+  z-index: 0;
+}
+.step {
+  text-align: center;
+  position: relative;
+  z-index: 1;
+  padding: 0 12px;
+}
+.step__number {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  background: var(--teal);
+  color: var(--lime);
+  font-family: var(--font-display);
+  font-size: 24px;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 20px;
+  border: 4px solid var(--white);
+  box-shadow: var(--shadow);
+  transition: all var(--transition);
+}
+.step:hover .step__number {
+  transform: scale(1.1);
+  background: var(--teal-mid);
+  box-shadow: var(--shadow-lg);
+}
+.step__icon {
+  font-size: 28px;
+  margin-bottom: 8px;
+}
+.step h4 {
+  font-size: 0.95rem;
+  margin-bottom: 8px;
+}
+.step p {
+  font-size: 13px;
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+
+/* ============================================
+   FAQ ACCORDION
+============================================ */
+.faq { background: var(--mist); }
+.faq__list {
+  max-width: 800px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.faq__item {
+  background: var(--white);
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  overflow: hidden;
+  transition: border-color var(--transition);
+}
+.faq__item:hover {
+  border-color: var(--teal-light);
+}
+.faq__question {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 24px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: var(--font-display);
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--slate);
+  text-align: left;
+  gap: 16px;
+  transition: color var(--transition);
+}
+.faq__question:hover {
+  color: var(--teal);
+}
+.faq__icon {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: var(--mist);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--teal);
+  flex-shrink: 0;
+  transition: all var(--transition);
+}
+.faq__item.open .faq__icon {
+  background: var(--teal);
+  color: var(--white);
+  transform: rotate(45deg);
+}
+.faq__answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+}
+.faq__answer-inner {
+  padding: 0 24px 20px;
+  font-size: 15px;
+  color: var(--text-muted);
+  line-height: 1.7;
+}
+
+/* ============================================
    ANIMATIONS
 ============================================ */
 @keyframes fadeUp {
@@ -891,6 +1087,8 @@ p:last-child { margin-bottom: 0; }
   .why-us__inner { grid-template-columns: 1fr; gap: 48px; }
   .service-page__inner { grid-template-columns: 1fr; }
   .service-sidebar { position: static; }
+  .steps { grid-template-columns: repeat(3, 1fr); gap: 32px; }
+  .steps::before { display: none; }
 }
 
 @media (max-width: 768px) {
@@ -921,7 +1119,9 @@ p:last-child { margin-bottom: 0; }
     margin-top: 4px;
   }
   .hamburger { display: flex; }
-  .header .btn--primary { display: none; }
+  .header__ctas { display: none; }
+  .review-bar { font-size: 12px; }
+  .review-bar__inner { gap: 6px; }
   .services__grid { grid-template-columns: 1fr; }
   .testimonials__grid { grid-template-columns: 1fr; }
   .footer__inner { grid-template-columns: 1fr; gap: 32px; }
@@ -932,9 +1132,11 @@ p:last-child { margin-bottom: 0; }
   .cta-banner__inner { flex-direction: column; text-align: center; }
   .hero__stats { gap: 32px; }
   .hero__scroll { display: none; }
+  .steps { grid-template-columns: repeat(2, 1fr); gap: 24px; }
 }
 
 @media (max-width: 480px) {
+  .steps { grid-template-columns: 1fr; gap: 20px; }
   .section { padding: 64px 0; }
   .hero__inner { padding: 80px 24px 60px; }
 }
