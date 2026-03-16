@@ -1302,7 +1302,14 @@ p:last-child { margin-bottom: 0; }
   .hero__ctas .btn--ghost-light { display: none; } /* floating call bar handles this on mobile */
   .hero__trust { gap: 12px; font-size: 12px; }
 
-  /* Quote form mobile */
+  /* Why Us — center on mobile */
+  .why-us__text { text-align: center; }
+  .why-us__text .btn { margin: 0 auto; }
+  .feature { flex-direction: column; align-items: center; text-align: center; }
+
+  /* Quote section — center on mobile */
+  .quote-section__info { text-align: center; }
+  .quote-benefits { align-items: center; }
   .quote-section__inner { grid-template-columns: 1fr; gap: 32px; }
   .quote-form { padding: 24px 20px; }
   .quote-form .form-row { grid-template-columns: 1fr; }
